@@ -12,7 +12,10 @@ BoardSelector::BoardSelector(QWidget *parent) :
 	ui->scrollArea->setWidget(ui->scrollFrame);
 
 	addBoardDialog = new AddBoardDialog();
-	connect(ui->addBoardButton, &QPushButton::clicked, addBoardDialog, &AddBoardDialog::open);
+	connect(ui->addBoardButton, &QPushButton::clicked, this, [=]() {
+		addBoardDialog->open();
+		addBoardDialog->scanForBoards();
+	});
 	connect(addBoardDialog, &AddBoardDialog::boardCreated, this, [=](EosSettings *board) { this->addBoard(board); emit boardCreated(board); });
 }
 

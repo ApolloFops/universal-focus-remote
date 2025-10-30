@@ -11,7 +11,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 
 	connect(&iface, &QOscTcpInterface::connected, this, &ETCEos::setupConnection);
 
-	iface.connect("/eos/out/cmd", [=](const QOscMessage &msg) { emit userCommandLineChanged(msg.toString()); });
+	iface.connect("/eos/out/cmd", [=](const QOscMessage &msg, const QHostAddress &sender) { emit userCommandLineChanged(msg.toString()); });
 
 	// Bind the network interface so you can send and get messages
 	qDebug() << "Connecting to board with IP"
@@ -74,7 +74,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	SETUP_KEY_ACTION(keyActionTrace, "trace", new QKeySequence(Qt::Key_J));
 
 	// Syncronize patch data
-	iface.connect("/eos/out/get/patch/count", [=](const QOscMessage &message) {
+	iface.connect("/eos/out/get/patch/count", [=](const QOscMessage &message, const QHostAddress &sender) {
 		QOscBundle bundle;
 		for (int i = 0; i < message.toInt(0); i++) {
 			bundle << QOscMessage("/eos/get/patch/index", i);
@@ -83,7 +83,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	});
 
 	// Set up patch data
-	connect(&iface, &QOscInterface::messageReceived, this, [=](QOscMessage message) {
+	connect(&iface, &QOscInterface::messageReceived, this, [=](const QOscMessage &message, const QHostAddress &sender) {
 		static QRegularExpression expression("\\/eos\\/out\\/get\\/patch\\/(\\d+)\\/(\\d+)\\/list\\/(\\d+)\\/(\\d+)");
 		QRegularExpressionMatch match = expression.match(message.pattern());
 		if (match.hasMatch()) {
@@ -120,7 +120,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	});
 
 	// Patch notifications
-	connect(&iface, &QOscInterface::messageReceived, this, [=](QOscMessage message) {
+	connect(&iface, &QOscInterface::messageReceived, this, [=](const QOscMessage &message, const QHostAddress &sender) {
 		static QRegularExpression expression("\\/eos\\/out\\/notify\\/patch\\/list\\/(\\d+)\\/(\\d+)");
 		QRegularExpressionMatch match = expression.match(message.pattern());
 		if (match.hasMatch()) {

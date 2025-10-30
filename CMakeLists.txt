@@ -78,6 +78,12 @@ set(
 
     src/boards/etc/eos/ui/patch/qpatchdatamodel.h
     src/boards/etc/eos/ui/patch/qpatchdatamodel.cpp
+
+    src/boards/etc/eos/eosdiscovery.h
+    src/boards/etc/eos/eosdiscovery.cpp
+
+    src/types/board/boarddiscovery.h
+    src/types/board/boarddiscovery.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
