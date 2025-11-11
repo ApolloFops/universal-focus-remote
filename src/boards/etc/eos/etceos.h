@@ -14,6 +14,7 @@ public:
 
 	QOscTcpInterface *getInterface() { return &iface; };
 
+	QString getSoftkeyLabel(qint32 index);
 	QMap<QString, EosChannel *> getChannelData();
 
 	// Key actions
@@ -83,6 +84,12 @@ public:
 	QBooleanAction *keyActionSlash;
 	QBooleanAction *keyActionSnapshot;
 	QBooleanAction *keyActionSneak;
+	QBooleanAction *keyActionSoft1;
+	QBooleanAction *keyActionSoft2;
+	QBooleanAction *keyActionSoft3;
+	QBooleanAction *keyActionSoft4;
+	QBooleanAction *keyActionSoft5;
+	QBooleanAction *keyActionSoft6;
 	QBooleanAction *keyActionSub;
 	QBooleanAction *keyActionThru;
 	QBooleanAction *keyActionTime;
@@ -95,6 +102,7 @@ public slots:
 
 signals:
 	void userCommandLineChanged(QString text);
+	void softkeyLabelChanged(qint32 index, QString label);
 	void patchUpdated();
 
 private:
@@ -104,5 +112,6 @@ private:
 
 	EosSettings *boardSettings;
 
+	QMap<qint32, QString> softkeyLabels;
 	QMap<QString, EosChannel *> channelList;
 };

@@ -1078,6 +1078,48 @@ Last</string>
        </property>
       </widget>
      </item>
+     <item row="3" column="4">
+      <widget class="QSquarePushButton" name="keySoft1">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="5">
+      <widget class="QSquarePushButton" name="keySoft2">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="6">
+      <widget class="QSquarePushButton" name="keySoft3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="8">
+      <widget class="QSquarePushButton" name="keySoft4">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="9">
+      <widget class="QSquarePushButton" name="keySoft5">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="10">
+      <widget class="QSquarePushButton" name="keySoft6">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
   </layout>

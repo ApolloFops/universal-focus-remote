@@ -16,4 +16,6 @@ public:
 
 private:
 	Ui::EosKeypadForm *ui;
+
+	QMap<qint32, QPushButton *> softKeys;
 };

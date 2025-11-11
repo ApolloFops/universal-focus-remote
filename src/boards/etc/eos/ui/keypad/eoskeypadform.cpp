@@ -76,11 +76,34 @@ EosKeypadForm::EosKeypadForm(EosForm *eosForm, QWidget *parent) :
 	setupActionButton(ui->keySlash, eosForm->board->keyActionSlash);
 	setupActionButton(ui->keySnapshot, eosForm->board->keyActionSnapshot);
 	setupActionButton(ui->keySneak, eosForm->board->keyActionSneak);
+	setupActionButton(ui->keySoft1, eosForm->board->keyActionSoft1);
+	setupActionButton(ui->keySoft2, eosForm->board->keyActionSoft2);
+	setupActionButton(ui->keySoft3, eosForm->board->keyActionSoft3);
+	setupActionButton(ui->keySoft4, eosForm->board->keyActionSoft4);
+	setupActionButton(ui->keySoft5, eosForm->board->keyActionSoft5);
+	setupActionButton(ui->keySoft6, eosForm->board->keyActionSoft6);
 	setupActionButton(ui->keySub, eosForm->board->keyActionSub);
 	setupActionButton(ui->keyThru, eosForm->board->keyActionThru);
 	setupActionButton(ui->keyTime, eosForm->board->keyActionTime);
 	setupActionButton(ui->keyTrace, eosForm->board->keyActionTrace);
 	setupActionButton(ui->keyUpdate, eosForm->board->keyActionUpdate);
+
+	softKeys[1] = ui->keySoft1;
+	softKeys[2] = ui->keySoft2;
+	softKeys[3] = ui->keySoft3;
+	softKeys[4] = ui->keySoft4;
+	softKeys[5] = ui->keySoft5;
+	softKeys[6] = ui->keySoft6;
+
+	for (auto [key, value] : softKeys.asKeyValueRange()) {
+		value->setText(eosForm->board->getSoftkeyLabel(key));
+	}
+
+	connect(eosForm->board, &ETCEos::softkeyLabelChanged, this, [=](qint32 index, QString label) {
+		if (softKeys.contains(index)) {
+			softKeys[index]->setText(label);
+		}
+	});
 }
 
 EosKeypadForm::~EosKeypadForm() {

@@ -11,14 +11,6 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 
 	connect(&iface, &QOscTcpInterface::connected, this, &ETCEos::setupConnection);
 
-	iface.connect("/eos/out/cmd", [=](const QOscMessage &msg, const QHostAddress &sender) { emit userCommandLineChanged(msg.toString()); });
-
-	// Bind the network interface so you can send and get messages
-	qDebug() << "Connecting to board with IP"
-			 << boardSettings->getIp();
-	iface.setRemoteAddress(boardSettings->getIp());
-	iface.setRemotePort(3037);
-
 	// Set up keypad actions
 	SETUP_KEY_ACTION(keyAction0, "0", new QKeySequence(Qt::Key_0));
 	SETUP_KEY_ACTION(keyAction1, "1", new QKeySequence(Qt::Key_1));
@@ -87,11 +79,35 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	SETUP_KEY_ACTION(keyActionSlash, "\\", new QKeySequence(Qt::Key_Slash));
 	SETUP_KEY_ACTION(keyActionSnapshot, "snapshot", new QKeySequence("Ctrl+S"));
 	SETUP_KEY_ACTION(keyActionSneak, "sneak", new QKeySequence(Qt::Key_N));
+	SETUP_KEY_ACTION(keyActionSoft1, "softkey_1", new QKeySequence("Alt+1"));
+	SETUP_KEY_ACTION(keyActionSoft2, "softkey_2", new QKeySequence("Alt+2"));
+	SETUP_KEY_ACTION(keyActionSoft3, "softkey_3", new QKeySequence("Alt+3"));
+	SETUP_KEY_ACTION(keyActionSoft4, "softkey_4", new QKeySequence("Alt+4"));
+	SETUP_KEY_ACTION(keyActionSoft5, "softkey_5", new QKeySequence("Alt+5"));
+	SETUP_KEY_ACTION(keyActionSoft6, "softkey_6", new QKeySequence("Alt+6"));
 	SETUP_KEY_ACTION(keyActionSub, "sub", new QKeySequence(Qt::Key_S));
 	SETUP_KEY_ACTION(keyActionThru, "thru", new QKeySequence(Qt::Key_T));
 	SETUP_KEY_ACTION(keyActionTime, "time", new QKeySequence(Qt::Key_I));
 	SETUP_KEY_ACTION(keyActionTrace, "trace", new QKeySequence(Qt::Key_J));
 	SETUP_KEY_ACTION(keyActionUpdate, "update", new QKeySequence(Qt::Key_U));
+
+	// Set up command line notifications
+	iface.connect("/eos/out/cmd", [=](const QOscMessage &msg, const QHostAddress &sender) {
+		emit userCommandLineChanged(msg.toString());
+	});
+
+	// Set up softkey notifications
+	connect(&iface, &QOscInterface::messageReceived, this, [=](const QOscMessage &message, const QHostAddress &sender) {
+		static QRegularExpression expression("\\/eos\\/out\\/softkey\\/(\\d+)");
+		QRegularExpressionMatch match = expression.match(message.pattern());
+		if (match.hasMatch()) {
+			qint32 softkeyIndex = match.captured(1).toInt();
+			QString softkeyLabel = message.toString(0);
+
+			softkeyLabels[softkeyIndex] = softkeyLabel;
+			emit softkeyLabelChanged(softkeyIndex, softkeyLabel);
+		}
+	});
 
 	// Syncronize patch data
 	iface.connect("/eos/out/get/patch/count", [=](const QOscMessage &message, const QHostAddress &sender) {
@@ -157,6 +173,16 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 			qint32 listCount = match.captured(2).toInt();
 		}
 	});
+
+	// Bind the network interface so you can send and get messages
+	qDebug() << "Connecting to board with IP"
+			 << boardSettings->getIp();
+	iface.setRemoteAddress(boardSettings->getIp());
+	iface.setRemotePort(3037);
+}
+
+QString ETCEos::getSoftkeyLabel(qint32 index) {
+	return softkeyLabels[index];
 }
 
 QMap<QString, EosChannel *> ETCEos::getChannelData() {
