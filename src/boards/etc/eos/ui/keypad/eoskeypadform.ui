@@ -884,6 +884,95 @@ Note</string>
        </property>
       </widget>
      </item>
+     <item row="5" column="0">
+      <widget class="QSquarePushButton" name="keyIntensityPalette">
+       <property name="text">
+        <string>Int
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QSquarePushButton" name="keyFocusPalette">
+       <property name="text">
+        <string>Focus
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QSquarePushButton" name="keyRecordOnly">
+       <property name="text">
+        <string>Record
+Only</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QSquarePushButton" name="keyColorPalette">
+       <property name="text">
+        <string>Color
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSquarePushButton" name="keyBeamPalette">
+       <property name="text">
+        <string>Beam
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QSquarePushButton" name="keyUpdate">
+       <property name="text">
+        <string>Update</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QSquarePushButton" name="keyPreset">
+       <property name="text">
+        <string>Preset</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QSquarePushButton" name="keySub">
+       <property name="text">
+        <string>Sub</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QSquarePushButton" name="keyGroup">
+       <property name="text">
+        <string>Group</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QSquarePushButton" name="keyShift">
+       <property name="text">
+        <string>Shift</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QSquarePushButton" name="keyDelay">
+       <property name="text">
+        <string>Delay</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QSquarePushButton" name="keyTime">
+       <property name="text">
+        <string>Time</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
   </layout>

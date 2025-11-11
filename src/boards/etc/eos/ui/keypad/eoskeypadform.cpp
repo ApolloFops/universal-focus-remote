@@ -23,19 +23,26 @@ EosKeypadForm::EosKeypadForm(EosForm *eosForm, QWidget *parent) :
 	setupActionButton(ui->keyAbout, eosForm->board->keyActionAbout);
 	setupActionButton(ui->keyAssert, eosForm->board->keyActionAssert);
 	setupActionButton(ui->keyAt, eosForm->board->keyActionAt);
+	setupActionButton(ui->keyBeamPalette, eosForm->board->keyActionBeamPalette);
 	setupActionButton(ui->keyBlock, eosForm->board->keyActionBlock);
 	setupActionButton(ui->keyCapture, eosForm->board->keyActionCapture);
 	setupActionButton(ui->keyClear, eosForm->board->keyActionClear);
+	setupActionButton(ui->keyColorPalette, eosForm->board->keyActionColorPalette);
 	setupActionButton(ui->keyCopyTo, eosForm->board->keyActionCopyTo);
 	setupActionButton(ui->keyCue, eosForm->board->keyActionCue);
+	setupActionButton(ui->keyDecimal, eosForm->board->keyActionDecimal);
+	setupActionButton(ui->keyDelay, eosForm->board->keyActionDelay);
 	setupActionButton(ui->keyDelete, eosForm->board->keyActionDelete);
 	setupActionButton(ui->keyEffect, eosForm->board->keyActionEffect);
 	setupActionButton(ui->keyEnter, eosForm->board->keyActionEnter);
 	setupActionButton(ui->keyFan, eosForm->board->keyActionFan);
+	setupActionButton(ui->keyFocusPalette, eosForm->board->keyActionFocusPalette);
 	setupActionButton(ui->keyFull, eosForm->board->keyActionFull);
 	setupActionButton(ui->keyGoToCue, eosForm->board->keyActionGoToCue);
+	setupActionButton(ui->keyGroup, eosForm->board->keyActionGroup);
 	setupActionButton(ui->keyHigh, eosForm->board->keyActionHigh);
 	setupActionButton(ui->keyHome, eosForm->board->keyActionHome);
+	setupActionButton(ui->keyIntensityPalette, eosForm->board->keyActionIntensityPalette);
 	setupActionButton(ui->keyLabelNote, eosForm->board->keyActionLabelNote);
 	setupActionButton(ui->keyLast, eosForm->board->keyActionLast);
 	setupActionButton(ui->keyLevel, eosForm->board->keyActionLevel);
@@ -50,17 +57,24 @@ EosKeypadForm::EosKeypadForm(EosForm *eosForm, QWidget *parent) :
 	setupActionButton(ui->keyPercentMinus, eosForm->board->keyActionPercentMinus);
 	setupActionButton(ui->keyPercentPlus, eosForm->board->keyActionPercentPlus);
 	setupActionButton(ui->keyPlus, eosForm->board->keyActionPlus);
+	setupActionButton(ui->keyPreset, eosForm->board->keyActionPreset);
 	setupActionButton(ui->keyQOnly, eosForm->board->keyActionQOnly);
 	setupActionButton(ui->keyQuery, eosForm->board->keyActionQuery);
 	setupActionButton(ui->keyRecallFrom, eosForm->board->keyActionRecallFrom);
 	setupActionButton(ui->keyRecord, eosForm->board->keyActionRecord);
+	setupActionButton(ui->keyRecordOnly, eosForm->board->keyActionRecordOnly);
 	setupActionButton(ui->keyRemDim, eosForm->board->keyActionRemDim);
 	setupActionButton(ui->keySelectActive, eosForm->board->keyActionSelectActive);
 	setupActionButton(ui->keySelectLast, eosForm->board->keyActionSelectLast);
 	setupActionButton(ui->keySelectManual, eosForm->board->keyActionSelectManual);
-	setupActionButton(ui->keySneak, eosForm->board->keyActionSneak);
+	setupActionButton(ui->keyShift, eosForm->board->keyActionShift);
 	setupActionButton(ui->keySlash, eosForm->board->keyActionSlash);
+	setupActionButton(ui->keySneak, eosForm->board->keyActionSneak);
+	setupActionButton(ui->keySub, eosForm->board->keyActionSub);
+	setupActionButton(ui->keyThru, eosForm->board->keyActionThru);
+	setupActionButton(ui->keyTime, eosForm->board->keyActionTime);
 	setupActionButton(ui->keyTrace, eosForm->board->keyActionTrace);
+	setupActionButton(ui->keyUpdate, eosForm->board->keyActionUpdate);
 }
 
 EosKeypadForm::~EosKeypadForm() {
