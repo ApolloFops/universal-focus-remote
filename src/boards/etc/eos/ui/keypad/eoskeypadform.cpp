@@ -21,6 +21,7 @@ EosKeypadForm::EosKeypadForm(EosForm *eosForm, QWidget *parent) :
 	setupActionButton(ui->key8, eosForm->board->keyAction8);
 	setupActionButton(ui->key9, eosForm->board->keyAction9);
 	setupActionButton(ui->keyAbout, eosForm->board->keyActionAbout);
+	setupActionButton(ui->keyAddress, eosForm->board->keyActionAddress);
 	setupActionButton(ui->keyAssert, eosForm->board->keyActionAssert);
 	setupActionButton(ui->keyAt, eosForm->board->keyActionAt);
 	setupActionButton(ui->keyBeamPalette, eosForm->board->keyActionBeamPalette);
@@ -35,17 +36,21 @@ EosKeypadForm::EosKeypadForm(EosForm *eosForm, QWidget *parent) :
 	setupActionButton(ui->keyDelete, eosForm->board->keyActionDelete);
 	setupActionButton(ui->keyEffect, eosForm->board->keyActionEffect);
 	setupActionButton(ui->keyEnter, eosForm->board->keyActionEnter);
+	setupActionButton(ui->keyFader, eosForm->board->keyActionFader);
 	setupActionButton(ui->keyFan, eosForm->board->keyActionFan);
 	setupActionButton(ui->keyFocusPalette, eosForm->board->keyActionFocusPalette);
 	setupActionButton(ui->keyFull, eosForm->board->keyActionFull);
 	setupActionButton(ui->keyGoToCue, eosForm->board->keyActionGoToCue);
 	setupActionButton(ui->keyGroup, eosForm->board->keyActionGroup);
+	setupActionButton(ui->keyHelp, eosForm->board->keyActionHelp);
 	setupActionButton(ui->keyHigh, eosForm->board->keyActionHigh);
 	setupActionButton(ui->keyHome, eosForm->board->keyActionHome);
 	setupActionButton(ui->keyIntensityPalette, eosForm->board->keyActionIntensityPalette);
 	setupActionButton(ui->keyLabelNote, eosForm->board->keyActionLabelNote);
 	setupActionButton(ui->keyLast, eosForm->board->keyActionLast);
+	setupActionButton(ui->keyLearn, eosForm->board->keyActionLearn);
 	setupActionButton(ui->keyLevel, eosForm->board->keyActionLevel);
+	setupActionButton(ui->keyMacro, eosForm->board->keyActionMacro);
 	setupActionButton(ui->keyMark, eosForm->board->keyActionMark);
 	setupActionButton(ui->keyMinus, eosForm->board->keyActionMinus);
 	setupActionButton(ui->keyNext, eosForm->board->keyActionNext);
@@ -69,6 +74,7 @@ EosKeypadForm::EosKeypadForm(EosForm *eosForm, QWidget *parent) :
 	setupActionButton(ui->keySelectManual, eosForm->board->keyActionSelectManual);
 	setupActionButton(ui->keyShift, eosForm->board->keyActionShift);
 	setupActionButton(ui->keySlash, eosForm->board->keyActionSlash);
+	setupActionButton(ui->keySnapshot, eosForm->board->keyActionSnapshot);
 	setupActionButton(ui->keySneak, eosForm->board->keyActionSneak);
 	setupActionButton(ui->keySub, eosForm->board->keyActionSub);
 	setupActionButton(ui->keyThru, eosForm->board->keyActionThru);

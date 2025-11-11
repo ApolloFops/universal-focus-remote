@@ -28,6 +28,7 @@ public:
 	QBooleanAction *keyAction8;
 	QBooleanAction *keyAction9;
 	QBooleanAction *keyActionAbout;
+	QBooleanAction *keyActionAddress;
 	QBooleanAction *keyActionAssert;
 	QBooleanAction *keyActionAt;
 	QBooleanAction *keyActionBeamPalette;
@@ -42,17 +43,21 @@ public:
 	QBooleanAction *keyActionDelete;
 	QBooleanAction *keyActionEffect;
 	QBooleanAction *keyActionEnter;
+	QBooleanAction *keyActionFader;
 	QBooleanAction *keyActionFan;
 	QBooleanAction *keyActionFocusPalette;
 	QBooleanAction *keyActionFull;
 	QBooleanAction *keyActionGoToCue;
 	QBooleanAction *keyActionGroup;
+	QBooleanAction *keyActionHelp;
 	QBooleanAction *keyActionHigh;
 	QBooleanAction *keyActionHome;
 	QBooleanAction *keyActionIntensityPalette;
 	QBooleanAction *keyActionLabelNote;
 	QBooleanAction *keyActionLast;
+	QBooleanAction *keyActionLearn;
 	QBooleanAction *keyActionLevel;
+	QBooleanAction *keyActionMacro;
 	QBooleanAction *keyActionMark;
 	QBooleanAction *keyActionMinus;
 	QBooleanAction *keyActionNext;
@@ -76,6 +81,7 @@ public:
 	QBooleanAction *keyActionSelectManual;
 	QBooleanAction *keyActionShift;
 	QBooleanAction *keyActionSlash;
+	QBooleanAction *keyActionSnapshot;
 	QBooleanAction *keyActionSneak;
 	QBooleanAction *keyActionSub;
 	QBooleanAction *keyActionThru;

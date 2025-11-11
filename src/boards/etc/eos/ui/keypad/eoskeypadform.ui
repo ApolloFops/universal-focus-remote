@@ -16,73 +16,23 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="keypadLayout">
-     <item row="1" column="0">
-      <widget class="QSquarePushButton" name="keyBlank1">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="0">
-      <widget class="QSquarePushButton" name="keyDelete">
-       <property name="text">
-        <string>Delete</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="12">
-      <widget class="QSquarePushButton" name="keySelectManual">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Select
-Manual</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="6">
-      <widget class="QSquarePushButton" name="key9">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>9</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="11">
-      <spacer name="horizontalSpacer">
+      <spacer name="verticalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeType">
         <enum>QSizePolicy::Policy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>10</width>
-         <height>0</height>
+         <width>0</width>
+         <height>10</height>
         </size>
        </property>
       </spacer>
      </item>
-     <item row="6" column="6">
+     <item row="10" column="6">
       <widget class="QSquarePushButton" name="key6">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -101,184 +51,29 @@ Manual</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="12">
-      <widget class="QSquarePushButton" name="keySelectLast">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
+     <item row="9" column="0">
+      <widget class="QSquarePushButton" name="keyIntensityPalette">
        <property name="text">
-        <string>Select
-Last</string>
+        <string>Int
+Palette</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="4">
-      <widget class="QSquarePushButton" name="keyClear">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
+     <item row="10" column="2">
+      <widget class="QSquarePushButton" name="keyUpdate">
        <property name="text">
-        <string>Clear</string>
+        <string>Update</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="9" colspan="2">
-      <widget class="QPushButton" name="keyEnter">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Enter</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="10">
-      <widget class="QSquarePushButton" name="keyQOnly">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>QOnly
-Track</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="5">
-      <widget class="QSquarePushButton" name="key5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="7">
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Policy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>10</width>
-         <height>0</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="6" column="9">
-      <widget class="QSquarePushButton" name="keyPercentMinus">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>-%</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="5">
-      <widget class="QSquarePushButton" name="keyThru">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Thru</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="4">
-      <widget class="QSquarePushButton" name="key4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
+     <item row="6" column="2">
       <widget class="QSquarePushButton" name="keyEffect">
        <property name="text">
         <string>Effect</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="10">
+     <item row="8" column="10">
       <widget class="QSquarePushButton" name="keySneak">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -300,94 +95,81 @@ Track</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="8">
-      <widget class="QSquarePushButton" name="keyOut">
+     <item row="13" column="12">
+      <widget class="QSquarePushButton" name="keyNext">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
        <property name="text">
-        <string>Out</string>
+        <string>Next</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="5">
-      <widget class="QSquarePushButton" name="key0">
+     <item row="10" column="1">
+      <widget class="QSquarePushButton" name="keyBeamPalette">
+       <property name="text">
+        <string>Beam
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="12">
+      <widget class="QSquarePushButton" name="keyLast">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="minimumSize">
+       <property name="text">
+        <string>Last</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="11">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
         <size>
-         <width>0</width>
+         <width>10</width>
          <height>0</height>
         </size>
        </property>
+      </spacer>
+     </item>
+     <item row="1" column="0">
+      <widget class="QSquarePushButton" name="keyFader">
        <property name="text">
-        <string>0</string>
+        <string>Fader</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QSquarePushButton" name="keyBlank3">
-       <property name="enabled">
-        <bool>false</bool>
+     <item row="8" column="3">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
-       <property name="text">
-        <string/>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
        </property>
-      </widget>
-     </item>
-     <item row="4" column="4">
-      <widget class="QSquarePushButton" name="keyPlus">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
+       <property name="sizeHint" stdset="0">
         <size>
-         <width>0</width>
+         <width>10</width>
          <height>0</height>
         </size>
        </property>
-       <property name="text">
-        <string>+</string>
-       </property>
-      </widget>
+      </spacer>
      </item>
-     <item row="9" column="6">
-      <widget class="QSquarePushButton" name="keyDecimal">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>.</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="12">
-      <widget class="QSquarePushButton" name="keySelectActive">
+     <item row="9" column="12">
+      <widget class="QSquarePushButton" name="keySelectManual">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -396,11 +178,99 @@ Track</string>
        </property>
        <property name="text">
         <string>Select
-Active</string>
+Manual</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="4">
+     <item row="5" column="1">
+      <widget class="QSquarePushButton" name="keyBlank2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="8">
+      <widget class="QSquarePushButton" name="keySlash">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>/</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="9">
+      <widget class="QSquarePushButton" name="keyHigh">
+       <property name="text">
+        <string>High</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="6">
+      <widget class="QSquarePushButton" name="key9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="9" colspan="2">
+      <widget class="QPushButton" name="keyEnter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Enter</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="10">
+      <widget class="QSquarePushButton" name="keyAbout">
+       <property name="text">
+        <string>About</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QSquarePushButton" name="keyCue">
+       <property name="text">
+        <string>Cue</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="4">
       <widget class="QSquarePushButton" name="key7">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -419,15 +289,8 @@ Active</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QSquarePushButton" name="keyPath">
-       <property name="text">
-        <string>Path</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="10">
-      <widget class="QSquarePushButton" name="keyTrace">
+     <item row="11" column="5">
+      <widget class="QSquarePushButton" name="key2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -441,43 +304,11 @@ Active</string>
         </size>
        </property>
        <property name="text">
-        <string>Trace</string>
+        <string>2</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="9">
-      <widget class="QSquarePushButton" name="keyPercentPlus">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>+%</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="12">
-      <widget class="QSquarePushButton" name="keyLast">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Last</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="8">
+     <item row="11" column="8">
       <widget class="QSquarePushButton" name="keyFull">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -496,23 +327,7 @@ Active</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Policy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>0</width>
-         <height>10</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="7" column="4">
+     <item row="11" column="4">
       <widget class="QSquarePushButton" name="key1">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -531,7 +346,185 @@ Active</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="9">
+     <item row="5" column="12">
+      <widget class="QSquarePushButton" name="keyPark">
+       <property name="text">
+        <string>Park</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QSquarePushButton" name="keyMacro">
+       <property name="text">
+        <string>Macro</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="8">
+      <widget class="QSquarePushButton" name="keyAt">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>At</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="2">
+      <widget class="QSquarePushButton" name="keyGroup">
+       <property name="text">
+        <string>Group</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QSquarePushButton" name="keyDelay">
+       <property name="text">
+        <string>Delay</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="6">
+      <widget class="QSquarePushButton" name="keyDecimal">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QSquarePushButton" name="keyFocusPalette">
+       <property name="text">
+        <string>Focus
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="4">
+      <widget class="QSquarePushButton" name="keyPlus">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="12">
+      <widget class="QSquarePushButton" name="keyCapture">
+       <property name="text">
+        <string>Capture</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="5">
+      <widget class="QSquarePushButton" name="key0">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QSquarePushButton" name="keySub">
+       <property name="text">
+        <string>Sub</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="10">
+      <widget class="QSquarePushButton" name="keyFan">
+       <property name="text">
+        <string>Fan</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="8">
+      <widget class="QSquarePushButton" name="keyOut">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Out</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSquarePushButton" name="keyBlank5">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="9">
       <widget class="QSquarePushButton" name="keyMark">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -550,8 +543,8 @@ Active</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="6">
-      <widget class="QSquarePushButton" name="keyMinus">
+     <item row="13" column="4">
+      <widget class="QSquarePushButton" name="keyClear">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -565,11 +558,68 @@ Active</string>
         </size>
        </property>
        <property name="text">
-        <string>-</string>
+        <string>Clear</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="6">
+     <item row="5" column="4">
+      <widget class="QSquarePushButton" name="keyQuery">
+       <property name="text">
+        <string>Query</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="5">
+      <widget class="QSquarePushButton" name="keyCopyTo">
+       <property name="text">
+        <string>Copy To</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="10">
+      <widget class="QSquarePushButton" name="keyQOnly">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>QOnly
+Track</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="7">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="6" column="6">
+      <widget class="QSquarePushButton" name="keyAssert">
+       <property name="text">
+        <string>Assert</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="6">
       <widget class="QSquarePushButton" name="key3">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -588,7 +638,139 @@ Active</string>
        </property>
       </widget>
      </item>
+     <item row="6" column="4">
+      <widget class="QSquarePushButton" name="keyGoToCue">
+       <property name="text">
+        <string>Go To Cue</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="9" column="10">
+      <widget class="QSquarePushButton" name="keyHome">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="10">
+      <widget class="QSquarePushButton" name="keyTrace">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Trace</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QSquarePushButton" name="keyBlank1">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
      <item row="5" column="8">
+      <widget class="QSquarePushButton" name="keyLabelNote">
+       <property name="text">
+        <string>Label
+Note</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSquarePushButton" name="keyBlank6">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="9">
+      <widget class="QSquarePushButton" name="keyBlank4">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QSquarePushButton" name="keyColorPalette">
+       <property name="text">
+        <string>Color
+Palette</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSquarePushButton" name="keyPath">
+       <property name="text">
+        <string>Path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QSquarePushButton" name="keyBlank3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QSquarePushButton" name="keyRecordOnly">
+       <property name="text">
+        <string>Record
+Only</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="8">
       <widget class="QSquarePushButton" name="keyRemDim">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -608,7 +790,111 @@ Dim</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="5">
+     <item row="13" column="0">
+      <widget class="QSquarePushButton" name="keyShift">
+       <property name="text">
+        <string>Shift</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="4">
+      <widget class="QSquarePushButton" name="key4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="9">
+      <widget class="QSquarePushButton" name="keyPercentMinus">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>-%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="9">
+      <widget class="QSquarePushButton" name="keyPercentPlus">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>+%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="6">
+      <widget class="QSquarePushButton" name="keyRecallFrom">
+       <property name="text">
+        <string>Recall From</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="12">
+      <widget class="QSquarePushButton" name="keySelectActive">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Select
+Active</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="5">
+      <widget class="QSquarePushButton" name="key5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="5">
       <widget class="QSquarePushButton" name="key8">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -627,50 +913,22 @@ Dim</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="12">
-      <widget class="QSquarePushButton" name="keyNext">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
+     <item row="11" column="0">
+      <widget class="QSquarePushButton" name="keyPreset">
        <property name="text">
-        <string>Next</string>
+        <string>Preset</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="10">
-      <widget class="QSquarePushButton" name="keyHome">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
+     <item row="6" column="5">
+      <widget class="QSquarePushButton" name="keyBlock">
        <property name="text">
-        <string>Home</string>
+        <string>Block</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QSquarePushButton" name="keyBlank2">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="8">
-      <widget class="QSquarePushButton" name="keyAt">
+     <item row="8" column="6">
+      <widget class="QSquarePushButton" name="keyMinus">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -684,11 +942,59 @@ Dim</string>
         </size>
        </property>
        <property name="text">
-        <string>At</string>
+        <string>-</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="9">
+     <item row="6" column="8">
+      <widget class="QSquarePushButton" name="keyOffset">
+       <property name="text">
+        <string>Offset</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QSquarePushButton" name="keyPart">
+       <property name="text">
+        <string>Part</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QSquarePushButton" name="keyAddress">
+       <property name="text">
+        <string>Address
+Patch</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="2">
+      <widget class="QSquarePushButton" name="keyTime">
+       <property name="text">
+        <string>Time</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="5">
+      <widget class="QSquarePushButton" name="keyThru">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Thru</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="9">
       <widget class="QSquarePushButton" name="keyLevel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -707,8 +1013,15 @@ Dim</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="5">
-      <widget class="QSquarePushButton" name="key2">
+     <item row="8" column="2">
+      <widget class="QSquarePushButton" name="keyRecord">
+       <property name="text">
+        <string>Record</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="12">
+      <widget class="QSquarePushButton" name="keySelectLast">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -722,97 +1035,34 @@ Dim</string>
         </size>
        </property>
        <property name="text">
-        <string>2</string>
+        <string>Select
+Last</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="8">
-      <widget class="QSquarePushButton" name="keySlash">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
+     <item row="3" column="2">
+      <widget class="QSquarePushButton" name="keyLearn">
        <property name="text">
-        <string>/</string>
+        <string>Learn</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="3">
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Policy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>10</width>
-         <height>0</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="2" column="4">
-      <widget class="QSquarePushButton" name="keyGoToCue">
+     <item row="6" column="0">
+      <widget class="QSquarePushButton" name="keyDelete">
        <property name="text">
-        <string>Go To Cue</string>
+        <string>Delete</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="5">
-      <widget class="QSquarePushButton" name="keyBlock">
+     <item row="0" column="0">
+      <widget class="QSquarePushButton" name="keySnapshot">
        <property name="text">
-        <string>Block</string>
+        <string>Snapshot</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="6">
-      <widget class="QSquarePushButton" name="keyAssert">
-       <property name="text">
-        <string>Assert</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="4">
-      <widget class="QSquarePushButton" name="keyQuery">
-       <property name="text">
-        <string>Query</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="5">
-      <widget class="QSquarePushButton" name="keyCopyTo">
-       <property name="text">
-        <string>Copy To</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="6">
-      <widget class="QSquarePushButton" name="keyRecallFrom">
-       <property name="text">
-        <string>Recall From</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="8">
-      <widget class="QSquarePushButton" name="keyLabelNote">
-       <property name="text">
-        <string>Label
-Note</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="9">
-      <widget class="QSquarePushButton" name="keyBlank4">
+     <item row="0" column="1">
+      <widget class="QSquarePushButton" name="keyBlank7">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -821,155 +1071,10 @@ Note</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="10">
-      <widget class="QSquarePushButton" name="keyAbout">
+     <item row="0" column="2">
+      <widget class="QSquarePushButton" name="keyHelp">
        <property name="text">
-        <string>About</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="8">
-      <widget class="QSquarePushButton" name="keyOffset">
-       <property name="text">
-        <string>Offset</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="9">
-      <widget class="QSquarePushButton" name="keyHigh">
-       <property name="text">
-        <string>High</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="10">
-      <widget class="QSquarePushButton" name="keyFan">
-       <property name="text">
-        <string>Fan</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="12">
-      <widget class="QSquarePushButton" name="keyCapture">
-       <property name="text">
-        <string>Capture</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="12">
-      <widget class="QSquarePushButton" name="keyPark">
-       <property name="text">
-        <string>Park</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QSquarePushButton" name="keyPart">
-       <property name="text">
-        <string>Part</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QSquarePushButton" name="keyCue">
-       <property name="text">
-        <string>Cue</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="2">
-      <widget class="QSquarePushButton" name="keyRecord">
-       <property name="text">
-        <string>Record</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QSquarePushButton" name="keyIntensityPalette">
-       <property name="text">
-        <string>Int
-Palette</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QSquarePushButton" name="keyFocusPalette">
-       <property name="text">
-        <string>Focus
-Palette</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="2">
-      <widget class="QSquarePushButton" name="keyRecordOnly">
-       <property name="text">
-        <string>Record
-Only</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QSquarePushButton" name="keyColorPalette">
-       <property name="text">
-        <string>Color
-Palette</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QSquarePushButton" name="keyBeamPalette">
-       <property name="text">
-        <string>Beam
-Palette</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="2">
-      <widget class="QSquarePushButton" name="keyUpdate">
-       <property name="text">
-        <string>Update</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QSquarePushButton" name="keyPreset">
-       <property name="text">
-        <string>Preset</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QSquarePushButton" name="keySub">
-       <property name="text">
-        <string>Sub</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="2">
-      <widget class="QSquarePushButton" name="keyGroup">
-       <property name="text">
-        <string>Group</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="0">
-      <widget class="QSquarePushButton" name="keyShift">
-       <property name="text">
-        <string>Shift</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1">
-      <widget class="QSquarePushButton" name="keyDelay">
-       <property name="text">
-        <string>Delay</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="2">
-      <widget class="QSquarePushButton" name="keyTime">
-       <property name="text">
-        <string>Time</string>
+        <string>Help</string>
        </property>
       </widget>
      </item>

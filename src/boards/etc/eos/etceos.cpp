@@ -31,6 +31,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	SETUP_KEY_ACTION(keyAction8, "8", new QKeySequence(Qt::Key_8));
 	SETUP_KEY_ACTION(keyAction9, "9", new QKeySequence(Qt::Key_9));
 	SETUP_KEY_ACTION(keyActionAbout, "about", new QKeySequence(Qt::Key_Y));
+	SETUP_KEY_ACTION(keyActionAddress, "address", new QKeySequence("Alt+A"));
 	SETUP_KEY_ACTION(keyActionAssert, "assert", new QKeySequence("Ctrl+W"));
 	SETUP_KEY_ACTION(keyActionAt, "at", new QKeySequence(Qt::Key_A));
 	SETUP_KEY_ACTION(keyActionBeamPalette, "beam_palette", new QKeySequence("Alt+B"));
@@ -45,17 +46,21 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	SETUP_KEY_ACTION(keyActionDelete, "delete", new QKeySequence(Qt::Key_Delete));
 	SETUP_KEY_ACTION(keyActionEffect, "effect", new QKeySequence("Alt+E"));
 	SETUP_KEY_ACTION(keyActionEnter, "enter", new QKeySequence(Qt::Key_Return));
+	SETUP_KEY_ACTION(keyActionFader, "fader", nullptr);
 	SETUP_KEY_ACTION(keyActionFan, "fan_", new QKeySequence(Qt::Key_W));
 	SETUP_KEY_ACTION(keyActionFocusPalette, "focus_palette", new QKeySequence("Alt+F"));
 	SETUP_KEY_ACTION(keyActionFull, "full", new QKeySequence(Qt::Key_F));
 	SETUP_KEY_ACTION(keyActionGoToCue, "go_to_cue", new QKeySequence("Ctrl+G"));
 	SETUP_KEY_ACTION(keyActionGroup, "group", new QKeySequence(Qt::Key_G));
+	SETUP_KEY_ACTION(keyActionHelp, "help", new QKeySequence("Alt+/"));
 	SETUP_KEY_ACTION(keyActionHigh, "highlight", new QKeySequence(Qt::Key_Backslash));
 	SETUP_KEY_ACTION(keyActionHome, "home", new QKeySequence(Qt::Key_Home));
 	SETUP_KEY_ACTION(keyActionIntensityPalette, "intensity_palette", new QKeySequence("Alt+I"));
 	SETUP_KEY_ACTION(keyActionLabelNote, "label", new QKeySequence(Qt::Key_L));
 	SETUP_KEY_ACTION(keyActionLast, "last", new QKeySequence(Qt::Key_PageUp));
+	SETUP_KEY_ACTION(keyActionLearn, "learn", new QKeySequence("Alt+L"));
 	SETUP_KEY_ACTION(keyActionLevel, "level", new QKeySequence(Qt::CTRL | Qt::Key_V));
+	SETUP_KEY_ACTION(keyActionMacro, "macro", new QKeySequence(Qt::Key_M));
 	SETUP_KEY_ACTION(keyActionMark, "automark_off", nullptr);
 	SETUP_KEY_ACTION(keyActionMinus, "-", new QKeySequence(Qt::Key_Minus));
 	SETUP_KEY_ACTION(keyActionNext, "next", new QKeySequence(Qt::Key_PageDown));
@@ -80,6 +85,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	SETUP_KEY_ACTION(keyActionSelectManual, "select_manual", new QKeySequence(Qt::CTRL | Qt::Key_M));
 	SETUP_KEY_ACTION(keyActionShift, "shift", new QKeySequence(Qt::Key_Shift));
 	SETUP_KEY_ACTION(keyActionSlash, "\\", new QKeySequence(Qt::Key_Slash));
+	SETUP_KEY_ACTION(keyActionSnapshot, "snapshot", new QKeySequence("Ctrl+S"));
 	SETUP_KEY_ACTION(keyActionSneak, "sneak", new QKeySequence(Qt::Key_N));
 	SETUP_KEY_ACTION(keyActionSub, "sub", new QKeySequence(Qt::Key_S));
 	SETUP_KEY_ACTION(keyActionThru, "thru", new QKeySequence(Qt::Key_T));
