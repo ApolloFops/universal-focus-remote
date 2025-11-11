@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>985</width>
-    <height>352</height>
+    <width>1013</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QGridLayout" name="keypadLayout">
+    <layout class="QGridLayout" name="keypadLayout" rowstretch="1,1,0,1,0,1,1,0,1,1,1,1,1,0" columnstretch="1,1,1,0,1,1,1,0,1,1,1,0,1">
      <item row="2" column="0">
       <spacer name="verticalSpacer_3">
        <property name="orientation">
