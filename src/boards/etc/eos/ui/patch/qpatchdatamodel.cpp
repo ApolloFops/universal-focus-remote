@@ -101,10 +101,4 @@ void QPatchDataModel::setChannelData(QMap<QString, EosChannel *> channelData) {
 	}
 
 	endResetModel();
-
-	for (const QString &uid : std::as_const(channelOrder)) {
-		EosChannel *channel = channelData.value(uid);
-		qDebug() << channel->channelNumber
-				 << channel->partNumber;
-	}
 }
