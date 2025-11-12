@@ -18,7 +18,7 @@ EosForm::EosForm(ETCEos* board, QWidget *parent) : QWidget(parent), ui(new Ui::E
 	// Set up the command line
 	QFontMetrics metrics(ui->commandLine->font());
 	int lineHeight = metrics.lineSpacing();
-	ui->commandLine->setFixedHeight(lineHeight + 10);
+	ui->commandLine->setFixedHeight(lineHeight + 14);
 	ui->commandLine->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	connect(board, &ETCEos::userCommandLineChanged, ui->commandLine, [=](QString text) { ui->commandLine->setText(text.replace('#', "♦")); });
 	new EosSyntaxHighlighter(ui->commandLine->document());
