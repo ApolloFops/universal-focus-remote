@@ -15,6 +15,7 @@ public:
 	QOscTcpInterface *getInterface() { return &iface; };
 
 	QString getSoftkeyLabel(qint32 index);
+	QMap<qint32, QPair<QString, qint32>> getChannelParams();
 	QMap<QString, EosChannel *> getChannelData();
 
 	// Key actions
@@ -118,11 +119,14 @@ public:
 
 public slots:
 	void setKeyPressed(QString keyName, bool pressed);
+	void setParameterValue(QString name, qint32 value);
 	void queryPatchData(qint32 index);
 
 signals:
 	void userCommandLineChanged(QString text);
 	void softkeyLabelChanged(qint32 index, QString label);
+	void wheelUpdated(qint32 index);
+	void wheelRemoved(qint32 index);
 	void patchUpdated();
 
 private:
@@ -133,5 +137,6 @@ private:
 	EosSettings *boardSettings;
 
 	QMap<qint32, QString> softkeyLabels;
+	QMap<qint32, QPair<QString, qint32>> channelParams;
 	QMap<QString, EosChannel *> channelList;
 };

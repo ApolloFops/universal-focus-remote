@@ -31,6 +31,10 @@ set(
     src/actions/qbooleanaction.h
     src/actions/qbooleanaction.cpp
 
+    src/widgets/qfader.h
+    src/widgets/qfader.cpp
+    src/widgets/qfader.ui
+
     src/main.cpp
 
     src/mainwindow.h
@@ -68,6 +72,10 @@ set(
     src/boards/etc/eos/ui/keypad/eoskeypadform.h
     src/boards/etc/eos/ui/keypad/eoskeypadform.cpp
     src/boards/etc/eos/ui/keypad/eoskeypadform.ui
+
+    src/boards/etc/eos/ui/lampcontrols/eoslampcontrolsform.h
+    src/boards/etc/eos/ui/lampcontrols/eoslampcontrolsform.cpp
+    src/boards/etc/eos/ui/lampcontrols/eoslampcontrolsform.ui
 
     src/addboarddialog.h
     src/addboarddialog.cpp

@@ -1,6 +1,7 @@
 #include "eosform.h"
 #include "eossyntaxhighlighter.h"
 #include "keypad/eoskeypadform.h"
+#include "lampcontrols/eoslampcontrolsform.h"
 #include "patch/eospatchform.h"
 #include "ui_eosform.h"
 
@@ -36,6 +37,11 @@ EosForm::EosForm(ETCEos* board, QWidget *parent) : QWidget(parent), ui(new Ui::E
 	tabArea->addTabToList("Patch", [=]() -> QWidget * {
 		EosPatchForm *patchForm = new EosPatchForm(this);
 		return patchForm;
+	});
+
+	tabArea->addTabToList("Lamp Controls", [=]() -> QWidget * {
+		EosLampControlsForm *lampControlsForm = new EosLampControlsForm(this);
+		return lampControlsForm;
 	});
 }
 

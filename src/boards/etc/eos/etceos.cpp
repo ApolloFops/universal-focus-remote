@@ -129,6 +129,31 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 		}
 	});
 
+	// Set up wheel notifications
+	connect(&iface, &QOscInterface::messageReceived, this, [=](const QOscMessage &message, const QHostAddress &sender) {
+		static QRegularExpression expression("\\/eos\\/out\\/active\\/wheel\\/(\\d+)");
+		static QRegularExpression paramExpression("(.*)\\s{2,}\\[(\\d+)\\]");
+		QRegularExpressionMatch match = expression.match(message.pattern());
+		if (match.hasMatch()) {
+			qint32 wheelIndex = match.captured(1).toInt();
+			QString wheelInfo = message.toString(0);
+			qint32 wheelGroup = message.toInt(1);
+			qint32 wheelLevel = message.toInt(2);
+
+			QRegularExpressionMatch infoMatch = paramExpression.match(wheelInfo);
+			QString wheelParam = infoMatch.captured(1);
+
+			if (wheelParam.isEmpty()) {
+				channelParams.remove(wheelIndex);
+				emit wheelRemoved(wheelIndex);
+			} else {
+				channelParams[wheelIndex].first = wheelParam;
+				channelParams[wheelIndex].second = wheelLevel;
+				emit wheelUpdated(wheelIndex);
+			}
+		}
+	});
+
 	// Syncronize patch data
 	iface.connect("/eos/out/get/patch/count", [=](const QOscMessage &message, const QHostAddress &sender) {
 		QOscBundle bundle;
@@ -205,14 +230,21 @@ QString ETCEos::getSoftkeyLabel(qint32 index) {
 	return softkeyLabels[index];
 }
 
+QMap<qint32, QPair<QString, qint32>> ETCEos::getChannelParams() {
+	return channelParams;
+}
+
 QMap<QString, EosChannel *> ETCEos::getChannelData() {
 	return channelList;
 }
 
 void ETCEos::setKeyPressed(QString keyName, bool pressed) {
-	// Craft the message you want to send
 	QOscMessage msg(QString("/eos/key/" + keyName), pressed);
+	iface.send(msg);
+}
 
+void ETCEos::setParameterValue(QString name, qint32 value) {
+	QOscMessage msg(QString("/eos/param/" + name), value);
 	iface.send(msg);
 }
 
