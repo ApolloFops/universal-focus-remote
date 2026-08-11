@@ -16,23 +16,23 @@ BoardSelector::BoardSelector(QWidget *parent) :
 		addBoardDialog->open();
 		addBoardDialog->scanForBoards();
 	});
-	connect(addBoardDialog, &AddBoardDialog::boardCreated, this, [=](EosSettings *board) { this->addBoard(board); emit boardCreated(board); });
+	connect(addBoardDialog, &AddBoardDialog::boardCreated, this, [=](BoardSettings *board) { this->addBoard(board); emit boardCreated(board); });
 }
 
 BoardSelector::~BoardSelector() {
 	delete ui;
 }
 
-void BoardSelector::buttonClicked(EosSettings *boardSettings) {
-	ETCEos *board = new ETCEos(boardSettings);
+void BoardSelector::buttonClicked(BoardSettings *boardSettings) {
+	ETCEos *board = new ETCEos(dynamic_cast<EosSettings *>(boardSettings));
 	emit boardSelected(new EosForm(board, this->window()));
 }
 
-void BoardSelector::buttonRightClicked(EosSettings *boardSettings) {
+void BoardSelector::buttonRightClicked(BoardSettings *boardSettings) {
 	boardSettings->remove();
 }
 
-void BoardSelector::addBoard(EosSettings *boardSettings) {
+void BoardSelector::addBoard(BoardSettings *boardSettings) {
 	// Create a board button
 	QDualEventButton *button = new QDualEventButton();
 	ui->boardList->layout()->addWidget(button);
@@ -45,5 +45,5 @@ void BoardSelector::addBoard(EosSettings *boardSettings) {
 	connect(button, &QDualEventButton::secondaryClick, this, [=]() { buttonRightClicked(boardSettings); });
 
 	// Connect the board removed signal
-	connect(boardSettings, &EosSettings::removed, this, [=]() { ui->boardList->layout()->removeWidget(button); });
+	connect(boardSettings, &BoardSettings::removed, this, [=]() { ui->boardList->layout()->removeWidget(button); });
 }

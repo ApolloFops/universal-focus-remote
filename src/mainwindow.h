@@ -2,6 +2,7 @@
 
 #include "boards/etc/eos/ui/eosform.h"
 #include "boardselector.h"
+#include "types/board/boardsettings.h"
 
 #include <QDir>
 #include <QFile>
@@ -23,7 +24,7 @@ public:
 	BoardSelector *boardSelector;
 
 	bool loadBoard(QString filePath);
-	bool saveBoard(EosSettings *boardSettings, QString fileName) const;
+	bool saveBoard(BoardSettings *boardSettings, QString fileName) const;
 
 	void read(const QJsonObject &json);
 	void write(QJsonObject &json) const;
@@ -33,7 +34,7 @@ public slots:
 
 private:
 	Ui::MainWindow *ui;
-	void setupBoard(EosSettings *boardSettings, QString fileName);
-	void onBoardCreated(EosSettings *boardSettings);
+	void setupBoard(BoardSettings *boardSettings, QString fileName);
+	void onBoardCreated(BoardSettings *boardSettings);
 	QDir *boardDir;
 };

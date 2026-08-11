@@ -92,6 +92,9 @@ set(
 
     src/types/board/boarddiscovery.h
     src/types/board/boarddiscovery.cpp
+
+    src/types/board/boardsettings.h
+    src/types/board/boardsettings.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
