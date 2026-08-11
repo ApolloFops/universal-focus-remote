@@ -15,6 +15,11 @@ EosForm::EosForm(ETCEos* board, QWidget *parent) : QWidget(parent), ui(new Ui::E
 
 	ui->setupUi(this);
 
+	// Set up the window title
+	// TODO: Put this in superclass
+	connect(board, &ETCEos::showNameChanged, this, [=](QString name) { this->window()->setWindowTitle(QString("Universal Focus Remote - %1 (%2)").arg(board->getBoardName(), name)); });
+	this->window()->setWindowTitle(QString("Universal Focus Remote - %1 (%2)").arg(board->getBoardName(), board->getShowName()));
+
 	// Set up the command line
 	QFontMetrics metrics(ui->commandLine->font());
 	int lineHeight = metrics.lineSpacing();

@@ -111,6 +111,12 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 	SETUP_KEY_ACTION(keyActionUndo, "undo", new QKeySequence("Ctrl+X"));
 	SETUP_KEY_ACTION(keyActionUpdate, "update", new QKeySequence(Qt::Key_U));
 
+	// Set up show name notifications
+	iface.connect("/eos/out/show/name", [=](const QOscMessage &msg, const QHostAddress &sender) {
+		showName = msg.toString();
+		emit showNameChanged(showName);
+	});
+
 	// Set up command line notifications
 	iface.connect("/eos/out/cmd", [=](const QOscMessage &msg, const QHostAddress &sender) {
 		emit userCommandLineChanged(msg.toString());
@@ -224,6 +230,14 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 			 << boardSettings->getIp();
 	iface.setRemoteAddress(boardSettings->getIp());
 	iface.setRemotePort(3037);
+}
+
+QString ETCEos::getBoardName() {
+	return boardSettings->getName();
+}
+
+QString ETCEos::getShowName() {
+	return showName;
 }
 
 QString ETCEos::getSoftkeyLabel(qint32 index) {
