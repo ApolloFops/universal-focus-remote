@@ -25,7 +25,7 @@ BoardSelector::~BoardSelector() {
 
 void BoardSelector::buttonClicked(EosSettings *boardSettings) {
 	ETCEos *board = new ETCEos(boardSettings);
-	emit boardSelected(new EosForm(board));
+	emit boardSelected(new EosForm(board, this->window()));
 }
 
 void BoardSelector::buttonRightClicked(EosSettings *boardSettings) {
