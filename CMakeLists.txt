@@ -90,6 +90,9 @@ set(
     src/boards/etc/eos/eosdiscovery.h
     src/boards/etc/eos/eosdiscovery.cpp
 
+    src/types/board/board.h
+    src/types/board/board.cpp
+
     src/types/board/boarddiscovery.h
     src/types/board/boarddiscovery.cpp
 

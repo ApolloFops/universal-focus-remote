@@ -6,9 +6,7 @@
 	setupKeyAction(action, keyString);
 
 ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
-		QObject{ parent } {
-	boardSettings = settings;
-
+		Board{ settings, parent } {
 	connect(&iface, &QOscTcpInterface::connected, this, &ETCEos::setupConnection);
 
 	// Set up keypad actions
@@ -113,8 +111,7 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 
 	// Set up show name notifications
 	iface.connect("/eos/out/show/name", [=](const QOscMessage &msg, const QHostAddress &sender) {
-		showName = msg.toString();
-		emit showNameChanged(showName);
+		setShowName(msg.toString());
 	});
 
 	// Set up command line notifications
@@ -227,17 +224,9 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 
 	// Bind the network interface so you can send and get messages
 	qDebug() << "Connecting to board with IP"
-			 << boardSettings->getIp();
-	iface.setRemoteAddress(boardSettings->getIp());
+			 << getSettings()->property("ip").toString();
+	iface.setRemoteAddress(getSettings()->property("ip").toString());
 	iface.setRemotePort(3037);
-}
-
-QString ETCEos::getBoardName() {
-	return boardSettings->getName();
-}
-
-QString ETCEos::getShowName() {
-	return showName;
 }
 
 QString ETCEos::getSoftkeyLabel(qint32 index) {

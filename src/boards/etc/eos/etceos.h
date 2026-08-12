@@ -1,12 +1,13 @@
 #pragma once
 
 #include "../../../actions/qbooleanaction.h"
+#include "../../../types/board/board.h"
 #include "datatypes/eoschannel.h"
 #include "eossettings.h"
 #include <QObject>
 #include <QOsc>
 
-class ETCEos : public QObject {
+class ETCEos : public Board {
 	Q_OBJECT
 
 public:
@@ -14,8 +15,6 @@ public:
 
 	QOscTcpInterface *getInterface() { return &iface; };
 
-	QString getBoardName();
-	QString getShowName();
 	QString getSoftkeyLabel(qint32 index);
 	QMap<qint32, QPair<QString, qint32>> getChannelParams();
 	QMap<QString, EosChannel *> getChannelData();
@@ -125,7 +124,6 @@ public slots:
 	void queryPatchData(qint32 index);
 
 signals:
-	void showNameChanged(QString name);
 	void userCommandLineChanged(QString text);
 	void softkeyLabelChanged(qint32 index, QString label);
 	void wheelUpdated(qint32 index);
@@ -137,9 +135,6 @@ private:
 	void setupKeyAction(QBooleanAction *action, QString keyName);
 	void setupConnection();
 
-	EosSettings *boardSettings;
-
-	QString showName;
 	QMap<qint32, QString> softkeyLabels;
 	QMap<qint32, QPair<QString, qint32>> channelParams;
 	QMap<QString, EosChannel *> channelList;
