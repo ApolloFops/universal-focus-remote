@@ -43,6 +43,7 @@ jobs:
           cache: true
           arch: ${{ matrix.arch }}
           target: ${{ matrix.target }}
+          version: 6.11.1
 
       - name: Update and install MSYS2 (64bit)
         if: ${{ runner.os == 'Windows' }}
