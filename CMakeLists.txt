@@ -98,6 +98,13 @@ set(
 
     src/types/board/boardsettings.h
     src/types/board/boardsettings.cpp
+
+    src/boards/etc/eos/ui/eossettingsform.h
+    src/boards/etc/eos/ui/eossettingsform.cpp
+    src/boards/etc/eos/ui/eossettingsform.ui
+
+    src/types/board/boardsettingsform.h
+    src/types/board/boardsettingsform.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

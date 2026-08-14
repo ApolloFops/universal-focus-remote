@@ -2,6 +2,8 @@
 
 #include <QJsonObject>
 
+class BoardSettingsForm;
+
 class BoardSettings : public QObject {
 	Q_OBJECT
 
@@ -19,6 +21,8 @@ public:
 
 	void setName(QString name);
 	QString getName() const;
+
+	virtual BoardSettingsForm *createSettingsForm() = 0;
 
 signals:
 	void updated();

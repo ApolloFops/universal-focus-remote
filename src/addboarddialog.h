@@ -1,7 +1,8 @@
 #pragma once
 
-#include "boards/etc/eos/eossettings.h"
 #include "types/board/boarddiscovery.h"
+#include "types/board/boardsettings.h"
+#include "types/board/boardsettingsform.h"
 #include <QDialog>
 
 namespace Ui {
@@ -18,11 +19,14 @@ public:
 	void scanForBoards();
 
 signals:
-	void boardCreated(EosSettings *boardSettings);
+	void boardCreated(BoardSettings *boardSettings);
 
 private:
 	Ui::AddBoardDialog *ui;
-	void onBoardFound(EosSettings *boardSettings);
+	BoardSettingsForm *settingsForm;
+	void onBoardFound(BoardSettings *boardSettings);
+	void showBoardEditor(BoardSettingsForm *boardEditor);
+	void hideBoardEditor();
 	void onAccepted();
 	BoardDiscovery *eosDiscovery;
 	QList<QString> uidsFound;

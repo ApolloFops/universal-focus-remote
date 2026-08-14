@@ -17,6 +17,8 @@ public:
 	void setIp(QString ip);
 	QString getIp() const;
 
+	BoardSettingsForm *createSettingsForm() override;
+
 signals:
 	void ipChanged(QString ip);
 

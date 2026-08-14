@@ -1,4 +1,5 @@
 #include "eossettings.h"
+#include "ui/eossettingsform.h"
 
 const QString BoardSettings::modelString = "etc.eos";
 
@@ -27,4 +28,8 @@ void EosSettings::setIp(QString ip) {
 
 QString EosSettings::getIp() const {
 	return ip;
+}
+
+BoardSettingsForm *EosSettings::createSettingsForm() {
+	return new EosSettingsForm(this);
 }
