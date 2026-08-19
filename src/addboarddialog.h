@@ -26,7 +26,7 @@ private:
 	QSharedPointer<BoardSettings> settingsBeingEdited;
 	BoardSettingsForm *settingsForm;
 	void onBoardFound(QSharedPointer<BoardSettings> boardSettings);
-	void showBoardEditor(BoardSettingsForm *boardEditor);
+	void showBoardEditor(QSharedPointer<BoardSettings> boardEditor);
 	void hideBoardEditor();
 	void onAccepted();
 	BoardDiscovery *eosDiscovery;

@@ -34,6 +34,14 @@ QVariant BoardSettings::getNamedProperty(QString name) {
 	return property.readOnGadget(this);
 }
 
+void BoardSettings::setFilePath(QString filePath) {
+	this->filePath = filePath;
+}
+
+QString BoardSettings::getFilePath() const {
+	return filePath;
+}
+
 void BoardSettings::setName(QString name) {
 	this->name = name;
 }

@@ -1,12 +1,12 @@
 #pragma once
 
 #include <QEnableSharedFromThis>
+#include <QFile>
 #include <QJsonObject>
 
 class BoardSettingsForm;
 
-//class BoardSettings : public QEnableSharedFromThis<BoardSettings> {
-class BoardSettings {
+class BoardSettings : public QEnableSharedFromThis<BoardSettings> {
 	Q_GADGET
 
 	Q_PROPERTY(QString name READ getName WRITE setName FINAL);
@@ -26,11 +26,17 @@ public:
 
 	QVariant getNamedProperty(QString name);
 
+	void setFilePath(QString filePath);
+	QString getFilePath() const;
+
 	void setName(QString name);
 	QString getName() const;
 
 	virtual BoardSettingsForm *createSettingsForm() = 0;
 
 private:
+	QString filePath;
 	QString name;
 };
+
+Q_DECLARE_METATYPE(QSharedPointer<BoardSettings>)

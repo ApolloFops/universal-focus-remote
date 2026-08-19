@@ -8,6 +8,8 @@ BoardSelector::BoardSelector(BoardDatabase *boardDatabase, QWidget *parent) :
 		ui(new Ui::BoardSelector) {
 	ui->setupUi(this);
 
+	this->boardDatabase = boardDatabase;
+
 	ui->scrollArea->setWidgetResizable(true);
 	ui->scrollArea->setWidget(ui->scrollFrame);
 
@@ -18,7 +20,7 @@ BoardSelector::BoardSelector(BoardDatabase *boardDatabase, QWidget *parent) :
 		addBoardDialog->open();
 		addBoardDialog->scanForBoards();
 	});
-	connect(addBoardDialog, &AddBoardDialog::boardCreated, this, [=](QSharedPointer<BoardSettings> board) { emit boardCreated(board); });
+	connect(addBoardDialog, &AddBoardDialog::boardCreated, boardDatabase, &BoardDatabase::addBoard);
 }
 
 BoardSelector::~BoardSelector() {
@@ -32,7 +34,7 @@ void BoardSelector::buttonClicked(QSharedPointer<BoardSettings> boardSettings) {
 }
 
 void BoardSelector::buttonRightClicked(QSharedPointer<BoardSettings> boardSettings) {
-	// boardSettings->remove();
+	boardDatabase->removeBoard(boardSettings);
 }
 
 void BoardSelector::addBoard(QSharedPointer<BoardSettings> boardSettings) {
@@ -46,7 +48,4 @@ void BoardSelector::addBoard(QSharedPointer<BoardSettings> boardSettings) {
 	// Connect the button clicked signals
 	connect(button, &QDualEventButton::clicked, this, [=](bool value) { buttonClicked(boardSettings); });
 	connect(button, &QDualEventButton::secondaryClick, this, [=]() { buttonRightClicked(boardSettings); });
-
-	// Connect the board removed signal
-	// connect(boardSettings, &BoardSettings::removed, this, [=]() { ui->boardList->layout()->removeWidget(button); });
 }

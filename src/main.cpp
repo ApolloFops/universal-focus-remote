@@ -5,6 +5,9 @@
 int main(int argc, char *argv[]) {
 	QApplication a(argc, argv);
 
+	// Register custom types
+	qRegisterMetaType<QSharedPointer<BoardSettings>>();
+
 	QFile stylesheetFile(":style/style.qss");
 
 	if (!stylesheetFile.exists()) {

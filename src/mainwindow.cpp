@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	boardSelector = new BoardSelector(boardDatabase, this);
 	connect(boardSelector, &BoardSelector::boardSelected, this, &MainWindow::setBoardForm);
-	connect(boardSelector, &BoardSelector::boardCreated, boardDatabase, &BoardDatabase::addBoard);
 	setCentralWidget(boardSelector);
 
 	boardDatabase->loadAllBoards();

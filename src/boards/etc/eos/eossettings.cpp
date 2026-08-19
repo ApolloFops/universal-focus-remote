@@ -28,6 +28,5 @@ QString EosSettings::getIp() const {
 }
 
 BoardSettingsForm *EosSettings::createSettingsForm() {
-	return new BoardSettingsForm();
-	// return new EosSettingsForm(sharedFromThis().staticCast<EosSettings>());
+	return new EosSettingsForm(sharedFromThis().staticCast<EosSettings>());
 }

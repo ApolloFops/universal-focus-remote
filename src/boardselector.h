@@ -28,5 +28,6 @@ private slots:
 
 private:
 	Ui::BoardSelector *ui;
+	BoardDatabase *boardDatabase;
 	AddBoardDialog *addBoardDialog;
 };

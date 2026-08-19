@@ -19,10 +19,18 @@ void BoardDatabase::addBoard(QSharedPointer<BoardSettings> boardSettings) {
 
 	QString fileName = QUuid::createUuid().toString(QUuid::WithoutBraces) + ".json";
 
+	boardSettings->setFilePath(boardDir->filePath(fileName));
+
 	// Save settings to disk
-	saveBoard(boardSettings, fileName);
+	saveBoard(boardSettings);
 
 	emit boardAdded(boardSettings);
+}
+
+void BoardDatabase::removeBoard(QSharedPointer<BoardSettings> boardSettings) {
+	QFile::remove(boardSettings->getFilePath());
+
+	emit boardRemoved(boardSettings);
 }
 
 bool BoardDatabase::loadBoard(QString filePath) {
@@ -45,6 +53,7 @@ bool BoardDatabase::loadBoard(QString filePath) {
 			boardSettingsObject.reset(new EosSettings());
 	}
 
+	boardSettingsObject->setFilePath(filePath);
 	boardSettingsObject->fromJson(json);
 
 	boardList.append(boardSettingsObject);
@@ -55,8 +64,8 @@ bool BoardDatabase::loadBoard(QString filePath) {
 	return true;
 }
 
-bool BoardDatabase::saveBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName) const {
-	QFile file(boardDir->filePath(fileName));
+bool BoardDatabase::saveBoard(QSharedPointer<BoardSettings> boardSettings) const {
+	QFile file(boardSettings->getFilePath());
 
 	if (!file.open(QIODevice::WriteOnly)) {
 		qWarning("Couldn't open board file.");

@@ -66,8 +66,7 @@ AddBoardDialog::AddBoardDialog(QWidget *parent) :
 	// Model Buttons
 	connect(ui->modelButtonEos, &QPushButton::clicked, this, [=](bool checked) {
 		QSharedPointer<EosSettings> boardSettings = QSharedPointer<EosSettings>::create();
-		BoardSettingsForm *boardSettingsForm = boardSettings->createSettingsForm();
-		showBoardEditor(boardSettingsForm);
+		showBoardEditor(boardSettings);
 	});
 }
 
@@ -89,15 +88,15 @@ void AddBoardDialog::onBoardFound(QSharedPointer<BoardSettings> boardSettings) {
 
 	// Connect the button clicked signal
 	connect(button, &QPushButton::clicked, this, [=](bool value) mutable {
-		settingsBeingEdited.swap(boardSettings);
-		showBoardEditor(boardSettings->createSettingsForm());
+		showBoardEditor(boardSettings);
 	});
 }
 
-void AddBoardDialog::showBoardEditor(BoardSettingsForm *boardEditor) {
-	settingsForm = boardEditor;
+void AddBoardDialog::showBoardEditor(QSharedPointer<BoardSettings> boardSettings) {
+	settingsBeingEdited.swap(boardSettings);
+	settingsForm = settingsBeingEdited->createSettingsForm();
 
-	ui->settingsEditorPage->layout()->addWidget(boardEditor);
+	ui->settingsEditorPage->layout()->addWidget(settingsForm);
 	ui->stackedWidget->setCurrentIndex(1);
 }
 
