@@ -11,7 +11,7 @@ class ETCEos : public Board {
 	Q_OBJECT
 
 public:
-	explicit ETCEos(EosSettings *settings, QObject *parent = nullptr);
+	explicit ETCEos(QSharedPointer<EosSettings> settings, QObject *parent = nullptr);
 
 	QOscTcpInterface *getInterface() { return &iface; };
 

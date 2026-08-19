@@ -38,6 +38,7 @@ MainWindow::~MainWindow(){
 void MainWindow::setBoardForm(EosForm *boardForm) {
 	this->boardForm = boardForm;
 	setCentralWidget(boardForm);
+	qDebug() << "test";
 }
 
 bool MainWindow::loadBoard(QString filePath) {
@@ -53,15 +54,16 @@ bool MainWindow::loadBoard(QString filePath) {
 	QJsonDocument loadDoc(QJsonDocument::fromJson(boardData));
 	QJsonObject json = loadDoc.object();
 
-	BoardSettings *boardSettingsObject;
+	QSharedPointer<BoardSettings> boardSettingsObject;
 
 	if (json.contains("model") && json["model"].isString()) {
 		if (json["model"] == EosSettings::modelString)
-			boardSettingsObject = new EosSettings();
+			boardSettingsObject.reset(new EosSettings());
 	}
 
 	boardSettingsObject->fromJson(json);
 
+	boardList.append(boardSettingsObject);
 	boardSelector->addBoard(boardSettingsObject);
 
 	setupBoard(boardSettingsObject, filePath);
@@ -71,7 +73,7 @@ bool MainWindow::loadBoard(QString filePath) {
 	return true;
 }
 
-bool MainWindow::saveBoard(BoardSettings *boardSettings, QString fileName) const {
+bool MainWindow::saveBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName) const {
 	QFile file(boardDir->filePath(fileName));
 
 	if (!file.open(QIODevice::WriteOnly)) {
@@ -85,19 +87,25 @@ bool MainWindow::saveBoard(BoardSettings *boardSettings, QString fileName) const
 	return true;
 }
 
-void MainWindow::setupBoard(BoardSettings *boardSettings, QString fileName) {
+void MainWindow::setupBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName) {
+	// Parent the settings object to this object
+	// boardSettings->setParent(this);
+
 	// Save settings to disk when they change
-	connect(boardSettings, &BoardSettings::updated, this, [=]() { saveBoard(boardSettings, fileName); });
+	// connect(boardSettings, &BoardSettings::updated, this, [=]() { saveBoard(boardSettings, fileName); });
 
 	// Delete settings from disk when they are removed
-	connect(boardSettings, &BoardSettings::removed, this, [=]() { QFile::remove(boardDir->filePath(fileName)); });
+	// connect(boardSettings, &BoardSettings::removed, this, [=]() { QFile::remove(boardDir->filePath(fileName)); });
 }
 
-void MainWindow::onBoardCreated(BoardSettings *boardSettings) {
+void MainWindow::onBoardCreated(QSharedPointer<BoardSettings> boardSettings) {
 	QString fileName = QUuid::createUuid().toString(QUuid::WithoutBraces) + ".json";
 
 	// Save settings to disk
 	saveBoard(boardSettings, fileName);
 
 	setupBoard(boardSettings, fileName);
+
+	// Add the board to the board selector
+	boardSelector->addBoard(boardSettings);
 }

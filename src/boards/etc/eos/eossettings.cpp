@@ -3,8 +3,7 @@
 
 const QString BoardSettings::modelString = "etc.eos";
 
-EosSettings::EosSettings(QObject *parent) :
-		BoardSettings{ parent } {
+EosSettings::EosSettings() : BoardSettings{} {
 }
 
 QJsonObject EosSettings::toJson() const {
@@ -22,8 +21,6 @@ void EosSettings::fromJson(const QJsonObject &json) {
 
 void EosSettings::setIp(QString ip) {
 	this->ip = ip;
-	emit ipChanged(ip);
-	emit updated();
 }
 
 QString EosSettings::getIp() const {
@@ -31,5 +28,6 @@ QString EosSettings::getIp() const {
 }
 
 BoardSettingsForm *EosSettings::createSettingsForm() {
-	return new EosSettingsForm(this);
+	return new BoardSettingsForm();
+	// return new EosSettingsForm(sharedFromThis().staticCast<EosSettings>());
 }

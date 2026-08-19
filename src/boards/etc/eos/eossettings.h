@@ -4,12 +4,14 @@
 #include <QJsonObject>
 
 class EosSettings : public BoardSettings {
-	Q_OBJECT
+	Q_GADGET
 
-	Q_PROPERTY(QString ip READ getIp WRITE setIp NOTIFY ipChanged FINAL);
+	Q_PROPERTY(QString ip READ getIp WRITE setIp FINAL);
 
 public:
-	explicit EosSettings(QObject *parent = nullptr);
+	explicit EosSettings();
+
+	virtual const QMetaObject *metaObject() const override { return &staticMetaObject; }
 
 	QJsonObject toJson() const override;
 	void fromJson(const QJsonObject &json) override;
@@ -18,9 +20,6 @@ public:
 	QString getIp() const;
 
 	BoardSettingsForm *createSettingsForm() override;
-
-signals:
-	void ipChanged(QString ip);
 
 private:
 	QString ip = "127.0.0.1";

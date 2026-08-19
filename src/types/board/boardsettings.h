@@ -1,33 +1,35 @@
 #pragma once
 
+#include <QEnableSharedFromThis>
 #include <QJsonObject>
 
 class BoardSettingsForm;
 
-class BoardSettings : public QObject {
-	Q_OBJECT
+//class BoardSettings : public QEnableSharedFromThis<BoardSettings> {
+class BoardSettings {
+	Q_GADGET
 
-	Q_PROPERTY(QString name READ getName WRITE setName NOTIFY nameChanged FINAL);
+	Q_PROPERTY(QString name READ getName WRITE setName FINAL);
 
 public:
-	explicit BoardSettings(QObject *parent = nullptr);
+	explicit BoardSettings();
+	~BoardSettings() {
+		qDebug() << "testing";
+	}
+
+	virtual const QMetaObject *metaObject() const { return &staticMetaObject; }
 
 	static const QString modelString;
 
 	virtual QJsonObject toJson() const;
 	virtual void fromJson(const QJsonObject &json);
 
-	void remove();
+	QVariant getNamedProperty(QString name);
 
 	void setName(QString name);
 	QString getName() const;
 
 	virtual BoardSettingsForm *createSettingsForm() = 0;
-
-signals:
-	void updated();
-	void removed();
-	void nameChanged(QString name);
 
 private:
 	QString name;

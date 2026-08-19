@@ -9,13 +9,11 @@ class BoardSettingsForm : public QWidget {
 public:
 	explicit BoardSettingsForm(QWidget *parent = nullptr);
 
-	BoardSettings *getSettings();
-
 signals:
 
 protected:
-	void setSettings(BoardSettings *settings);
+	void setSettings(QSharedPointer<BoardSettings> settings);
 
 private:
-	BoardSettings *settings;
+	QSharedPointer<BoardSettings> settings;
 };

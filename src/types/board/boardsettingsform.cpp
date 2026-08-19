@@ -3,10 +3,6 @@
 BoardSettingsForm::BoardSettingsForm(QWidget *parent) : QWidget{ parent } {
 }
 
-void BoardSettingsForm::setSettings(BoardSettings *settings) {
+void BoardSettingsForm::setSettings(QSharedPointer<BoardSettings> settings) {
 	this->settings = settings;
-}
-
-BoardSettings *BoardSettingsForm::getSettings() {
-	return settings;
 }

@@ -1,10 +1,10 @@
 #include "board.h"
 
-Board::Board(BoardSettings *settings, QObject *parent) : QObject{ parent } {
-	this->settings = settings;
+Board::Board(QSharedPointer<BoardSettings> settings, QObject *parent) : QObject{ parent } {
+	this->settings.swap(settings);
 }
 
-BoardSettings *Board::getSettings() {
+QSharedPointer<BoardSettings> Board::getSettings() {
 	return settings;
 }
 

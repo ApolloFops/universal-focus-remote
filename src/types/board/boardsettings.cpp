@@ -1,6 +1,8 @@
 #include "boardsettings.h"
 
-BoardSettings::BoardSettings(QObject *parent) : QObject{ parent } {
+#include <QMetaProperty>
+
+BoardSettings::BoardSettings() {
 }
 
 QJsonObject BoardSettings::toJson() const {
@@ -20,15 +22,20 @@ void BoardSettings::fromJson(const QJsonObject &json) {
 		setName(json["name"].toString());
 }
 
-void BoardSettings::remove() {
-	emit removed();
-	delete this;
+QVariant BoardSettings::getNamedProperty(QString name) {
+	int index = metaObject()->indexOfProperty(name.toUtf8());
+
+	if (index < 0) {
+		return QVariant();
+	}
+
+	QMetaProperty property = metaObject()->property(index);
+
+	return property.readOnGadget(this);
 }
 
 void BoardSettings::setName(QString name) {
 	this->name = name;
-	emit nameChanged(name);
-	emit updated();
 }
 
 QString BoardSettings::getName() const {

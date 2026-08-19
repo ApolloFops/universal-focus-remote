@@ -11,7 +11,7 @@ class EosSettingsForm : public BoardSettingsForm {
 	Q_OBJECT
 
 public:
-	explicit EosSettingsForm(EosSettings *settings, QWidget *parent = nullptr);
+	explicit EosSettingsForm(QSharedPointer<EosSettings> settings, QWidget *parent = nullptr);
 	~EosSettingsForm();
 
 private:

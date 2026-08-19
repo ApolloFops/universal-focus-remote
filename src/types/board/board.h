@@ -9,9 +9,9 @@ class Board : public QObject {
 	Q_PROPERTY(QString showName READ getShowName WRITE setShowName NOTIFY showNameChanged FINAL)
 
 public:
-	explicit Board(BoardSettings *settings, QObject *parent = nullptr);
+	explicit Board(QSharedPointer<BoardSettings> settings, QObject *parent = nullptr);
 
-	BoardSettings *getSettings();
+	QSharedPointer<BoardSettings> getSettings();
 
 	QString getBoardName();
 	QString getShowName();
@@ -23,7 +23,7 @@ protected:
 	void setShowName(QString name);
 
 private:
-	BoardSettings *settings;
+	QSharedPointer<BoardSettings> settings;
 
 	QString showName;
 };

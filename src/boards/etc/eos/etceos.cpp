@@ -5,7 +5,7 @@
 	action->setShortcut(shortcutKey);                    \
 	setupKeyAction(action, keyString);
 
-ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
+ETCEos::ETCEos(QSharedPointer<EosSettings> settings, QObject *parent) :
 		Board{ settings, parent } {
 	connect(&iface, &QOscTcpInterface::connected, this, &ETCEos::setupConnection);
 
@@ -224,8 +224,8 @@ ETCEos::ETCEos(EosSettings *settings, QObject *parent) :
 
 	// Bind the network interface so you can send and get messages
 	qDebug() << "Connecting to board with IP"
-			 << getSettings()->property("ip").toString();
-	iface.setRemoteAddress(getSettings()->property("ip").toString());
+			 << getSettings()->getNamedProperty("ip").toString();
+	iface.setRemoteAddress(getSettings()->getNamedProperty("ip").toString());
 	iface.setRemotePort(3037);
 }
 

@@ -15,15 +15,15 @@ public:
 	explicit BoardSelector(QWidget *parent = nullptr);
 	~BoardSelector();
 
-	void addBoard(BoardSettings *boardSettings);
+	void addBoard(QSharedPointer<BoardSettings> boardSettings);
 
 signals:
 	void boardSelected(EosForm *boardForm);
-	void boardCreated(BoardSettings *boardSettings);
+	void boardCreated(QSharedPointer<BoardSettings> boardSettings);
 
 private slots:
-	void buttonClicked(BoardSettings *boardSettings);
-	void buttonRightClicked(BoardSettings *boardSettings);
+	void buttonClicked(QSharedPointer<BoardSettings> boardSettings);
+	void buttonRightClicked(QSharedPointer<BoardSettings> boardSettings);
 
 private:
 	Ui::BoardSelector *ui;

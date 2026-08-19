@@ -19,12 +19,13 @@ public:
 	void scanForBoards();
 
 signals:
-	void boardCreated(BoardSettings *boardSettings);
+	void boardCreated(QSharedPointer<BoardSettings> boardSettings);
 
 private:
 	Ui::AddBoardDialog *ui;
+	QSharedPointer<BoardSettings> settingsBeingEdited;
 	BoardSettingsForm *settingsForm;
-	void onBoardFound(BoardSettings *boardSettings);
+	void onBoardFound(QSharedPointer<BoardSettings> boardSettings);
 	void showBoardEditor(BoardSettingsForm *boardEditor);
 	void hideBoardEditor();
 	void onAccepted();

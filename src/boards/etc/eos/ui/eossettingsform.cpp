@@ -1,7 +1,7 @@
 #include "eossettingsform.h"
 #include "ui_eossettingsform.h"
 
-EosSettingsForm::EosSettingsForm(EosSettings *settings, QWidget *parent) :
+EosSettingsForm::EosSettingsForm(QSharedPointer<EosSettings> settings, QWidget *parent) :
 		BoardSettingsForm(parent),
 		ui(new Ui::EosSettingsForm) {
 	setSettings(settings);

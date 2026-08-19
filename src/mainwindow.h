@@ -24,7 +24,7 @@ public:
 	BoardSelector *boardSelector;
 
 	bool loadBoard(QString filePath);
-	bool saveBoard(BoardSettings *boardSettings, QString fileName) const;
+	bool saveBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName) const;
 
 	void read(const QJsonObject &json);
 	void write(QJsonObject &json) const;
@@ -34,7 +34,8 @@ public slots:
 
 private:
 	Ui::MainWindow *ui;
-	void setupBoard(BoardSettings *boardSettings, QString fileName);
-	void onBoardCreated(BoardSettings *boardSettings);
+	QList<QSharedPointer<BoardSettings>> boardList;
+	void setupBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName);
+	void onBoardCreated(QSharedPointer<BoardSettings> boardSettings);
 	QDir *boardDir;
 };

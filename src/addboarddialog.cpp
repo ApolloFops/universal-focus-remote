@@ -50,7 +50,7 @@ AddBoardDialog::AddBoardDialog(QWidget *parent) :
 	eosDiscovery = new EosDiscovery();
 	connect(eosDiscovery, &BoardDiscovery::boardFound, this, [=](const QHostAddress &address, const int &port, const QString &uid, const QString &name) {
 		if (!uidsFound.contains(uid)) {
-			EosSettings *boardSettings = new EosSettings();
+			QSharedPointer<EosSettings> boardSettings = QSharedPointer<EosSettings>::create();
 
 			boardSettings->setIp(address.toString());
 			boardSettings->setName(name);
@@ -65,9 +65,8 @@ AddBoardDialog::AddBoardDialog(QWidget *parent) :
 
 	// Model Buttons
 	connect(ui->modelButtonEos, &QPushButton::clicked, this, [=](bool checked) {
-		EosSettings *boardSettings = new EosSettings();
+		QSharedPointer<EosSettings> boardSettings = QSharedPointer<EosSettings>::create();
 		BoardSettingsForm *boardSettingsForm = boardSettings->createSettingsForm();
-		boardSettings->setParent(boardSettingsForm);
 		showBoardEditor(boardSettingsForm);
 	});
 }
@@ -80,7 +79,7 @@ void AddBoardDialog::scanForBoards() {
 	eosDiscovery->queryBoards();
 }
 
-void AddBoardDialog::onBoardFound(BoardSettings *boardSettings) {
+void AddBoardDialog::onBoardFound(QSharedPointer<BoardSettings> boardSettings) {
 	// Create a board button
 	QPushButton *button = new QPushButton();
 	ui->discoveredBoardList->layout()->addWidget(button);
@@ -89,7 +88,8 @@ void AddBoardDialog::onBoardFound(BoardSettings *boardSettings) {
 	button->setText(boardSettings->getName());
 
 	// Connect the button clicked signal
-	connect(button, &QPushButton::clicked, this, [=](bool value) {
+	connect(button, &QPushButton::clicked, this, [=](bool value) mutable {
+		settingsBeingEdited.swap(boardSettings);
 		showBoardEditor(boardSettings->createSettingsForm());
 	});
 }
@@ -107,10 +107,10 @@ void AddBoardDialog::hideBoardEditor() {
 	if (settingsForm) {
 		ui->settingsEditorPage->layout()->removeWidget(settingsForm);
 		settingsForm->deleteLater();
+		settingsForm = nullptr;
 	}
 }
 
 void AddBoardDialog::onAccepted() {
-	settingsForm->getSettings()->setParent(nullptr);
-	emit boardCreated(settingsForm->getSettings());
+	emit boardCreated(settingsBeingEdited);
 }
