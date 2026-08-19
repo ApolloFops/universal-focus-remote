@@ -48,4 +48,11 @@ void BoardSelector::addBoard(QSharedPointer<BoardSettings> boardSettings) {
 	// Connect the button clicked signals
 	connect(button, &QDualEventButton::clicked, this, [=](bool value) { buttonClicked(boardSettings); });
 	connect(button, &QDualEventButton::secondaryClick, this, [=]() { buttonRightClicked(boardSettings); });
+
+	// Remove the button when it gets removed from the database
+	connect(boardDatabase, &BoardDatabase::boardRemoved, this, [=](QSharedPointer<BoardSettings> removedSettings) {
+		if (boardSettings == removedSettings) {
+			ui->boardList->layout()->removeWidget(button);
+		}
+	});
 }

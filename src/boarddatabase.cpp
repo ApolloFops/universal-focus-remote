@@ -30,6 +30,8 @@ void BoardDatabase::addBoard(QSharedPointer<BoardSettings> boardSettings) {
 void BoardDatabase::removeBoard(QSharedPointer<BoardSettings> boardSettings) {
 	QFile::remove(boardSettings->getFilePath());
 
+	boardList.removeAll(boardSettings);
+
 	emit boardRemoved(boardSettings);
 }
 
