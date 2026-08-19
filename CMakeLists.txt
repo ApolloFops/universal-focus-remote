@@ -41,6 +41,9 @@ set(
     src/mainwindow.cpp
     src/mainwindow.ui
 
+    src/boarddatabase.h
+    src/boarddatabase.cpp
+
     src/widgets/tabs/qboardtabarea.h
     src/widgets/tabs/qboardtabarea.cpp
 

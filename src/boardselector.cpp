@@ -3,13 +3,15 @@
 
 #include "widgets/qdualeventbutton.h"
 
-BoardSelector::BoardSelector(QWidget *parent) :
+BoardSelector::BoardSelector(BoardDatabase *boardDatabase, QWidget *parent) :
 		QWidget(parent),
 		ui(new Ui::BoardSelector) {
 	ui->setupUi(this);
 
 	ui->scrollArea->setWidgetResizable(true);
 	ui->scrollArea->setWidget(ui->scrollFrame);
+
+	connect(boardDatabase, &BoardDatabase::boardAdded, this, &BoardSelector::addBoard);
 
 	addBoardDialog = new AddBoardDialog();
 	connect(ui->addBoardButton, &QPushButton::clicked, this, [=]() {

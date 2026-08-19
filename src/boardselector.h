@@ -1,6 +1,7 @@
 #pragma once
 
 #include "addboarddialog.h"
+#include "boarddatabase.h"
 #include "boards/etc/eos/ui/eosform.h"
 #include <QWidget>
 
@@ -12,7 +13,7 @@ class BoardSelector : public QWidget {
 	Q_OBJECT
 
 public:
-	explicit BoardSelector(QWidget *parent = nullptr);
+	explicit BoardSelector(BoardDatabase *boardDatabase, QWidget *parent = nullptr);
 	~BoardSelector();
 
 	void addBoard(QSharedPointer<BoardSettings> boardSettings);

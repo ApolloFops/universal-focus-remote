@@ -1,8 +1,8 @@
 #pragma once
 
+#include "boarddatabase.h"
 #include "boards/etc/eos/ui/eosform.h"
 #include "boardselector.h"
-#include "types/board/boardsettings.h"
 
 #include <QDir>
 #include <QFile>
@@ -21,21 +21,12 @@ public:
 	MainWindow(QWidget *parent = nullptr);
 	~MainWindow();
 	EosForm *boardForm;
+	BoardDatabase *boardDatabase;
 	BoardSelector *boardSelector;
-
-	bool loadBoard(QString filePath);
-	bool saveBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName) const;
-
-	void read(const QJsonObject &json);
-	void write(QJsonObject &json) const;
 
 public slots:
 	void setBoardForm(EosForm *boardForm);
 
 private:
 	Ui::MainWindow *ui;
-	QList<QSharedPointer<BoardSettings>> boardList;
-	void setupBoard(QSharedPointer<BoardSettings> boardSettings, QString fileName);
-	void onBoardCreated(QSharedPointer<BoardSettings> boardSettings);
-	QDir *boardDir;
 };
